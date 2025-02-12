@@ -47,10 +47,17 @@ namespace Assignment_LINQ
             #endregion
             #region Q2
 
-            var result = CustomerList.Select(c => new
+            //var result = CustomerList.Select(c => new
+            //{
+            //    customer = c.CustomerName,
+            //    order = c.Orders.Count()
+            //});
+            #endregion
+            #region Q3
+            var result = ProductList.Select(p => new
             {
-                customer = c.CustomerName,
-                order = c.Orders.Count()
+                    Category = p.Category,
+                    ProductNumber = p.ProductName.Count(),
             });
             #endregion
 
