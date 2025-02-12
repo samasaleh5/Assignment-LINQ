@@ -185,8 +185,13 @@ namespace Assignment_LINQ
             //    .ThenBy(word => word, StringComparer.OrdinalIgnoreCase);  
             #endregion
             #region Q6
-            var result = ProductList.OrderBy(p => p.Category)
-                .ThenByDescending(c => c.UnitPrice);
+            //var result = ProductList.OrderBy(p => p.Category)
+            //    .ThenByDescending(c => c.UnitPrice);
+            #endregion
+            #region Q7
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var result=Arr.OrderBy(word=> word.Length)
+                .ThenByDescending(word=> word,StringComparer.OrdinalIgnoreCase);
             #endregion
             foreach (var item in result)
             {
