@@ -86,9 +86,12 @@ namespace Assignment_LINQ
             var result = ProductList.GroupBy(P=>P.Category).Select(p => new
             {
                 Category=p.Key,
-                
-
+                TotalUnits=p.Sum(p => p.UnitsInStock),
             });
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Category}: {item.TotalUnits} units");
+            }
             #endregion
 
 
