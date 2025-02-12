@@ -106,16 +106,29 @@ namespace Assignment_LINQ
             //}
             #endregion
             #region Q11
-            var result = ProductList.GroupBy(p => p.Category).
-                 SelectMany(g =>
-                 {
-                     var minprice = g.Min(p => p.UnitPrice);
-                     return g.Where(p => p.UnitPrice == minprice);
- 
-                 });
-            foreach (var product in result)
+            //var result = ProductList.GroupBy(p => p.Category).
+            //     SelectMany(g =>
+            //     {
+            //         var minprice = g.Min(p => p.UnitPrice);
+            //         return g.Where(p => p.UnitPrice == minprice);
+
+            //     });
+            //foreach (var product in result)
+            //{
+            //    Console.WriteLine($"{product.Category}: {product.ProductName} - ${product.UnitPrice}");
+            //}
+
+            #endregion
+            #region Q12
+            var result = ProductList.GroupBy(p => p.Category)
+                     .Select(g => new
+                     { 
+                         Category = g.Key, MostExpensivePrice = g.Max(p => p.UnitPrice) 
+                     });
+
+            foreach (var item in result)
             {
-                Console.WriteLine($"{product.Category}: {product.ProductName} - ${product.UnitPrice}");
+                Console.WriteLine($"{item.Category}: ${item.MostExpensivePrice}");
             }
 
             #endregion
