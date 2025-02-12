@@ -20,11 +20,18 @@ namespace Assignment_LINQ
 
             //LINQ - Element Operators
             #region Q1
-            var result = ProductList.FirstOrDefault(P=>P.UnitsInStock==0);
-            if (result == null)
-                Console.WriteLine("NO Product OutOfStock");
+            //var result = ProductList.FirstOrDefault(P=>P.UnitsInStock==0);
+            //if (result == null)
+            //    Console.WriteLine("NO Product OutOfStock");
+            //else
+            //    Console.WriteLine($"First OutOfStockProduct is {result.ProductName}");
+            #endregion
+            #region Q2
+            var result = ProductList.FirstOrDefault(p => p.UnitPrice > 1000);
+            if (result !!= null)
+                Console.WriteLine($"First product over 1000: {result.ProductName} - ${result.UnitPrice}");
             else
-                Console.WriteLine($"First OutOfStockProduct is {result.ProductName}");
+                Console.WriteLine("NO Product Found with Price Over 1000");
             #endregion
 
             //foreach (var item in result)
