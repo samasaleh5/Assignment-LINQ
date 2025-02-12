@@ -61,9 +61,20 @@ namespace Assignment_LINQ
             //});
             #endregion
             #region Q4
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result=Arr.Count();
-            Console.WriteLine(result);
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result=Arr.Count();
+            //Console.WriteLine(result);
+            #endregion
+            #region Q5/Q6/Q7
+            string[] words = File.ReadAllLines("dictionary_english.txt");
+            //int totalchar=words.Sum(x => x.Length);
+            //Console.WriteLine($"Total Number of Characters in Dictionary: {totalchar}");
+
+            int LongestWordLength=words.Max(x => x.Length);
+            Console.WriteLine($"Longest Word Length: {LongestWordLength}");
+           
+            double AverageWordLength=words.Average(x => x.Length);
+            Console.WriteLine($"Average Word Length: {AverageWordLength}");
             #endregion
 
 
