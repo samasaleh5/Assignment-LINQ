@@ -65,16 +65,30 @@ namespace Assignment_LINQ
             //var result=Arr.Count();
             //Console.WriteLine(result);
             #endregion
-            #region Q5/Q6/Q7
-            string[] words = File.ReadAllLines("dictionary_english.txt");
+            #region Q5/Q6/Q7/Q8
+            //string[] words = File.ReadAllLines("dictionary_english.txt");
             //int totalchar=words.Sum(x => x.Length);
             //Console.WriteLine($"Total Number of Characters in Dictionary: {totalchar}");
 
-            int LongestWordLength=words.Max(x => x.Length);
-            Console.WriteLine($"Longest Word Length: {LongestWordLength}");
-           
-            double AverageWordLength=words.Average(x => x.Length);
-            Console.WriteLine($"Average Word Length: {AverageWordLength}");
+            //int ShortestWordLength = words.Max(x => x.Length);
+            //Console.WriteLine($"Shortest Word Length: {ShortestWordLength}");
+
+            //int LongestWordLength=words.Max(x => x.Length);
+            //Console.WriteLine($"Longest Word Length: {LongestWordLength}");
+
+
+            //double AverageWordLength=words.Average(x => x.Length);
+            //Console.WriteLine($"Average Word Length: {AverageWordLength}");
+
+
+            #endregion
+            #region Q9
+            var result = ProductList.GroupBy(P=>P.Category).Select(p => new
+            {
+                Category=p.Key,
+                
+
+            });
             #endregion
 
 
