@@ -34,10 +34,21 @@ namespace Assignment_LINQ
             //    Console.WriteLine("NO Product Found with Price Over 1000");
             #endregion
             #region Q3
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result=Arr.Where(n=>n>5).Skip(1).FirstOrDefault();
+            //Console.WriteLine(result);
+            #endregion
+
+            //LINQ - Aggregate Operators
+            #region Q1
             int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result=Arr.Where(n=>n>5).Skip(1).FirstOrDefault();
+            var result=Arr.Count(n=>n%2==0);
             Console.WriteLine(result);
             #endregion
+
+
+
+
 
             //foreach (var item in result)
             //{
