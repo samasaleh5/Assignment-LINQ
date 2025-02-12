@@ -41,20 +41,25 @@ namespace Assignment_LINQ
 
             //LINQ - Aggregate Operators
             #region Q1
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
-            var result=Arr.Count(n=>n%2==0);
-            Console.WriteLine(result);
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //var result=Arr.Count(n=>n%2==0);
+            //Console.WriteLine(result);
+            #endregion
+            #region Q2
+
+            var result = CustomerList.Select(c => new
+            {
+                customer = c.CustomerName,
+                order = c.Orders.Count()
+            });
             #endregion
 
 
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item}");
 
-
-
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine($"{item}");
-
-            //}
+            }
 
         }
     }
