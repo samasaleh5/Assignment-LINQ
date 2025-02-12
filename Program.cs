@@ -120,16 +120,32 @@ namespace Assignment_LINQ
 
             #endregion
             #region Q12
-            var result = ProductList.GroupBy(p => p.Category)
-                     .Select(g => new
-                     { 
-                         Category = g.Key, MostExpensivePrice = g.Max(p => p.UnitPrice) 
-                     });
+            //var result = ProductList.GroupBy(p => p.Category)
+            //         .Select(g => new
+            //         { 
+            //             Category = g.Key, MostExpensivePrice = g.Max(p => p.UnitPrice) 
+            //         });
 
-            foreach (var item in result)
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Category}: ${item.MostExpensivePrice}");
+            //}
+
+            #endregion
+            #region Q13
+            var result = ProductList.GroupBy(p => p.Category)
+            .SelectMany(g =>
+              {
+               var maxPrice = g.Max(p => p.UnitPrice);
+               return g.Where(p => p.UnitPrice == maxPrice);
+              });
+
+      
+            foreach (var product in result)
             {
-                Console.WriteLine($"{item.Category}: ${item.MostExpensivePrice}");
+                Console.WriteLine($"{product.Category}: {product.ProductName} - ${product.UnitPrice}");
             }
+
 
             #endregion
 
