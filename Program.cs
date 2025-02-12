@@ -10,7 +10,7 @@ namespace Assignment_LINQ
             // var result = ProductList.Where(P => P.UnitsInStock == 0);
             #endregion
             #region Q2
-
+            var result = ProductList.Where(P => P.UnitsInStock == 0 && P.UnitPrice>3.00m);
             #endregion
 
             foreach (var item in result)
