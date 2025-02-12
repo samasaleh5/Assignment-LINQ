@@ -164,10 +164,13 @@ namespace Assignment_LINQ
             #endregion
             //  LINQ - Ordering Operators
             #region Q1
-            var result = ProductList.OrderBy(p => p.ProductName).Select(c=>c.ProductName);
+            // var result = ProductList.OrderBy(p => p.ProductName).Select(c=>c.ProductName);
 
             #endregion
-
+            #region Q2
+            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            var result=Arr.OrderBy(word=>word,StringComparer.OrdinalIgnoreCase);
+            #endregion
 
             foreach (var item in result)
             {
