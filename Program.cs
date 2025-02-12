@@ -83,14 +83,26 @@ namespace Assignment_LINQ
 
             #endregion
             #region Q9
-            var result = ProductList.GroupBy(P=>P.Category).Select(p => new
-            {
-                Category=p.Key,
-                TotalUnits=p.Sum(p => p.UnitsInStock),
-            });
+            //var result = ProductList.GroupBy(P=>P.Category).Select(p => new
+            //{
+            //    Category=p.Key,
+            //    TotalUnits=p.Sum(p => p.UnitsInStock),
+            //});
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Category}: {item.TotalUnits} units");
+            //}
+            #endregion
+            #region Q10
+            var result = ProductList.GroupBy(p => p.Category).
+                Select(p => new
+                {
+                    Category = p.Key,
+                    cheapestprice = p.Min(p => p.UnitPrice)
+                });
             foreach (var item in result)
             {
-                Console.WriteLine($"{item.Category}: {item.TotalUnits} units");
+                Console.WriteLine($"{item.Category}: ${item.cheapestprice}");
             }
             #endregion
 
