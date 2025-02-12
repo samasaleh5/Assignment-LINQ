@@ -189,9 +189,13 @@ namespace Assignment_LINQ
             //    .ThenByDescending(c => c.UnitPrice);
             #endregion
             #region Q7
-            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
-            var result=Arr.OrderBy(word=> word.Length)
-                .ThenByDescending(word=> word,StringComparer.OrdinalIgnoreCase);
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result=Arr.OrderBy(word=> word.Length)
+            //    .ThenByDescending(word=> word,StringComparer.OrdinalIgnoreCase);
+            #endregion
+            #region Q8
+            string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            var result=Arr.Where(word => word.Length > 1 && word[1] == 'i').Reverse();
             #endregion
             foreach (var item in result)
             {
