@@ -1,5 +1,6 @@
 ﻿using static Assignment_LINQ.ListGenerators;
 using System.Linq;
+using System.Threading;
 namespace Assignment_LINQ
 {
     internal class Program
@@ -172,9 +173,12 @@ namespace Assignment_LINQ
             //var result=Arr.OrderBy(word=>word,StringComparer.OrdinalIgnoreCase);
             #endregion
             #region Q3
-            var result = ProductList.OrderByDescending(p => p.UnitsInStock);
+            //var result = ProductList.OrderByDescending(p => p.UnitsInStock);
             #endregion
-
+            #region Q4
+            string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            var result = Arr.OrderBy(word => word.Length).ThenBy(word => word);
+            #endregion
             foreach (var item in result)
             {
                 Console.WriteLine($"{item}");
