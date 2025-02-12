@@ -7,7 +7,10 @@ namespace Assignment_LINQ
         static void Main(string[] args)
         {
             #region Q1
-            var result = ProductList.Where(P => P.UnitsInStock == 0);
+            // var result = ProductList.Where(P => P.UnitsInStock == 0);
+            #endregion
+            #region Q2
+
             #endregion
 
             foreach (var item in result)
