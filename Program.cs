@@ -133,19 +133,33 @@ namespace Assignment_LINQ
 
             #endregion
             #region Q13
+            //var result = ProductList.GroupBy(p => p.Category)
+            //.SelectMany(g =>
+            //  {
+            //   var maxPrice = g.Max(p => p.UnitPrice);
+            //   return g.Where(p => p.UnitPrice == maxPrice);
+            //  });
+
+
+            //foreach (var product in result)
+            //{
+            //    Console.WriteLine($"{product.Category}: {product.ProductName} - ${product.UnitPrice}");
+            //}
+
+
+            #endregion
+            #region  Q14
             var result = ProductList.GroupBy(p => p.Category)
-            .SelectMany(g =>
-              {
-               var maxPrice = g.Max(p => p.UnitPrice);
-               return g.Where(p => p.UnitPrice == maxPrice);
-              });
-
-      
-            foreach (var product in result)
+            .Select(g => new
             {
-                Console.WriteLine($"{product.Category}: {product.ProductName} - ${product.UnitPrice}");
-            }
+            Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) 
+            });
 
+           
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Category}: ${item.AveragePrice:F2}");
+            }
 
             #endregion
 
