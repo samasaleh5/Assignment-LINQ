@@ -194,14 +194,48 @@ namespace Assignment_LINQ
             //    .ThenByDescending(word=> word,StringComparer.OrdinalIgnoreCase);
             #endregion
             #region Q8
-            string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            var result=Arr.Where(word => word.Length > 1 && word[1] == 'i').Reverse();
+            //string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+            //var result=Arr.Where(word => word.Length > 1 && word[1] == 'i').Reverse();
             #endregion
+
+            //LINQ – Transformation Operators
+            #region Q1
+            //var result = ProductList.Select(p => p.ProductName);
+            #endregion
+            #region Q2
+            //string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            //var result=words.Select(w => new { Upper = w.ToUpper(), Lower = w.ToLower() });
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"Upper: {item.Upper}, Lower: {item.Lower}");
+            //}
+            #endregion
+            #region Q3
+            //var result = ProductList.Select(p => new
+            //{
+            //    p.ProductName,
+            //    price = p.UnitPrice,
+            //    p.Category
+            //});
+            #endregion
+            #region Q4
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var result = Arr.Select((num, index) => new { Number = num, Position = index })
+                         .Where(x => x.Number == x.Position);
             foreach (var item in result)
             {
-                Console.WriteLine($"{item}");
-
+                Console.WriteLine($"Number: {item.Number}, Position: {item.Position}");
             }
+            #endregion
+
+
+
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item}");
+
+            //}
 
         }
     }
