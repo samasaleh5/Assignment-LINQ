@@ -168,8 +168,11 @@ namespace Assignment_LINQ
 
             #endregion
             #region Q2
-            String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
-            var result=Arr.OrderBy(word=>word,StringComparer.OrdinalIgnoreCase);
+            //String[] Arr = { "aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry" };
+            //var result=Arr.OrderBy(word=>word,StringComparer.OrdinalIgnoreCase);
+            #endregion
+            #region Q3
+            var result = ProductList.OrderByDescending(p => p.UnitsInStock);
             #endregion
 
             foreach (var item in result)
