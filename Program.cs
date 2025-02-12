@@ -149,28 +149,31 @@ namespace Assignment_LINQ
 
             #endregion
             #region  Q14
-            var result = ProductList.GroupBy(p => p.Category)
-            .Select(g => new
-            {
-            Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) 
-            });
-
-           
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Category}: ${item.AveragePrice:F2}");
-            }
-
-            #endregion
-
-
+            //var result = ProductList.GroupBy(p => p.Category)
+            //.Select(g => new
+            //{
+            //Category = g.Key, AveragePrice = g.Average(p => p.UnitPrice) 
+            //});
 
 
             //foreach (var item in result)
             //{
-            //    Console.WriteLine($"{item}");
-
+            //    Console.WriteLine($"{item.Category}: ${item.AveragePrice:F2}");
             //}
+
+            #endregion
+            //  LINQ - Ordering Operators
+            #region Q1
+            var result = ProductList.OrderBy(p => p.ProductName).Select(c=>c.ProductName);
+
+            #endregion
+
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item}");
+
+            }
 
         }
     }
