@@ -54,19 +54,26 @@ namespace Assignment_LINQ
             //});
             #endregion
             #region Q3
-            var result = ProductList.Select(p => new
-            {
-                    Category = p.Category,
-                    ProductNumber = p.ProductName.Count(),
-            });
+            //var result = ProductList.Select(p => new
+            //{
+            //        Category = p.Category,
+            //        ProductNumber = p.ProductName.Count(),
+            //});
+            #endregion
+            #region Q4
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var result=Arr.Count();
+            Console.WriteLine(result);
             #endregion
 
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item}");
 
-            }
+
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item}");
+
+            //}
 
         }
     }
