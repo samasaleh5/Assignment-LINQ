@@ -6,6 +6,7 @@ namespace Assignment_LINQ
     {
         static void Main(string[] args)
         {
+            //LINQ - Restriction Operators
             #region Q1
             // var result = ProductList.Where(P => P.UnitsInStock == 0);
             #endregion
@@ -13,15 +14,24 @@ namespace Assignment_LINQ
             // var result = ProductList.Where(P => P.UnitsInStock == 0 && P.UnitPrice>3.00m);
             #endregion
             #region Q3
-            String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            var result = Arr.Select((name, index) => new { Name = name, Index = index }).Where(item => item.Name.Length < item.Index);
+            // String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            // var result = Arr.Select((name, index) => new { Name = name, Index = index }).Where(item => item.Name.Length < item.Index);
             #endregion
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item}");
+            //LINQ - Element Operators
+            #region Q1
+            var result = ProductList.FirstOrDefault(P=>P.UnitsInStock==0);
+            if (result == null)
+                Console.WriteLine("NO Product OutOfStock");
+            else
+                Console.WriteLine($"First OutOfStockProduct is {result.ProductName}");
+            #endregion
 
-            }
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item}");
+
+            //}
 
         }
     }
