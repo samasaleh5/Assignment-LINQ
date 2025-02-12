@@ -177,7 +177,11 @@ namespace Assignment_LINQ
             #endregion
             #region Q4
             string[] Arr = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-            var result = Arr.OrderBy(word => word.Length).ThenBy(word => word);
+            //var result = Arr.OrderBy(word => word.Length).ThenBy(word => word);
+            #endregion
+            #region Q5
+            var result = Arr.OrderBy(word => word)
+                .ThenBy(word => word, StringComparer.OrdinalIgnoreCase);  
             #endregion
             foreach (var item in result)
             {
